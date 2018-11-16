@@ -42,9 +42,22 @@
 }
 </style>
 <script>
+//사용자가 최근에 불을 켰는지 껐는지를 알아야 
+//그 상태를 반전할수 있으므로, 전역변수로 빼놓자
+var flag=true;
+
 function turnOff(){
-	//dark div의 투명도를 불투명하게 하자 (즉 opacity 1)
-	
+	var op;
+	flag=!flag;
+
+	if(flag==true){
+		op=0;
+	}
+	if(flag==false){
+		op=0.8;
+	}
+	//dark div의 투명도를 불투명하게 하자 (즉 opacity 0.8)
+	document.getElementById("dark").style.opacity=op;
 }
 </script>
 </head>
