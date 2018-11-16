@@ -4,8 +4,13 @@
 <meta charset="UTF-8">
 <title>햄버거 나르기</title>
 <style>
+/*햄버거의 위치를 지정하되, 부모를 기준으로 즉div를 기준으로
+해야 하기 때문에 absolute 로 지정하자*/
 #burger{
 	width:250px;
+	position:absolute;/*가장 근접한 부모태그를 기준으로한 위치*/
+	left:100px;
+	top:200px;
 }
 
 /*스타일 코드를 재사용하기 위해서는 클래스 단위로 정의해놓으면
@@ -14,6 +19,7 @@
 	width:100%;
 	height:700px;
 }
+
 </style>
 <script>
 //사용자가 마우스르 움직이는 한, 계속 좌표를 구해놓아야함
@@ -26,6 +32,10 @@ function getPos(){
 	//문서내에 info 라 불리는 dom 요소의 텍스트값을 좌표로 대체하자
 	document.getElementById("info").innerText="x:"+x+", y:"+y;
 }
+//햄버거 집기!! 햄버거의 좌표와 마우스의 좌표를 일치!!
+function take(){
+
+}
 </script>
 </head>
 <body onMouseMove="getPos()">
@@ -33,7 +43,7 @@ function getPos(){
 	<div class="stage">
 		<img src="../res/plate.png"/>
 		<br>
-		<img src="../res/burger.png" id="burger"/>
+		<img src="../res/burger.png" id="burger" onClick="take()"/>
 	</div>
 </body>
 </html>
