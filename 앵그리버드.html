@@ -9,6 +9,9 @@ body{
 }
 </style>
 <script>
+var img;//다른 함수에서 앵그리버드를 접근하게 하기 위해 전역변수로선언
+var x=0;
+
 //문서가 로드되면, 오디오 객체 생성하여 문서에 붙이자!!
 function init(){
 	createAudio(); //음악재생 함수 호출!!	
@@ -16,9 +19,12 @@ function init(){
 }
 
 function createBird(){
-	var img=document.createElement("img");
+	img=document.createElement("img");
 	img.src="../res/bird.png";
 	img.style.width=200+"px";
+	img.style.position="absolute";
+	img.style.left=0+"px";
+	img.style.top=0+"px";
 	document.body.appendChild(img);
 }
 //코드의 관리목적상 기능마다 함수화시켜 처리하자
@@ -29,9 +35,29 @@ function createAudio(){
 	//오디오를 문서에 붙이자!!
 	document.body.appendChild(audio);
 }
+//사용자의 모든 이벤트는 event객체에 정보로 들어있다..
+function move(){
+	//a : 65 --> 이진수
+	//alert("당신이 누른 아스키 코드값은"+event.keyCode);
+	if(event.keyCode==37){
+		console.log("좌측 키 눌렀어?");
+		//앵그리버드의 x축의 값을 감소시킨다!!
+		x=x-10;
+		img.style.left=x+"px";
+	}
+	if(event.keyCode==39){
+		console.log("우측 키 눌렀어?");
+	}
+	if(event.keyCode==38){
+		console.log("up 키 눌렀어?");
+	}
+	if(event.keyCode==40){
+		console.log("down 키 눌렀어?");
+	}
 
+}
 </script>
 </head>
-<body onLoad="init()">
+<body onLoad="init()" onKeyDown="move()">
 </body>
 </html>
