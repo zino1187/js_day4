@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>전등스위치 효과</title>
+<style>
+/*클래스란? 프로그래밍에서 코드를 재사용할때 함수를
+이용하듯, css에서도 재사용하고픈 디자인 영역을 이름
+붙인단위가 지원되는데 이를 클래스라 한다..*/
+.wrapper{
+	border:5px solid blue;
+	width:900px;
+	height:600px;
+	background:yellow;
+	/*auto:화면의 남은 여백을 분할하여 양쪽에 배분하는 속성*/
+	margin:auto; 
+}
+.light{
+	width:150px;
+	height:100%;
+	background:pink;
+	float:left;
+}
+.room{
+	width:750px;	
+	height:100%;
+	background:red;
+	float:left;
+}
+</style>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="light"></div>
+		<div class="room">
+			
+		</div>
+	</div>
+</body>
+</html>

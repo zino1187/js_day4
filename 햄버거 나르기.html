@@ -35,7 +35,9 @@ function getPos(){
 	y=event.clientY; //y좌표값
 	//console.log(x,y);
 	//문서내에 info 라 불리는 dom 요소의 텍스트값을 좌표로 대체하자
-	document.getElementById("info").innerText="x:"+x+", y:"+y;
+	document.getElementById("info").innerText="x:"+x+", y:"+y+" flag:"+flag;
+
+	//flag의 상태도 출력하자 (공부목적으로..)
 
 	//햄버거의 좌표 = 마우스의 좌표 
 	if(flag){
@@ -46,8 +48,8 @@ function getPos(){
 }
 //햄버거 집기!! 햄버거의 좌표와 마우스의 좌표를 일치!!
 function take(){
-	//alert("나 눌렀어?");
-	flag=true;
+	alert("나 눌렀어?");
+	flag=!flag;
 }
 </script>
 </head>
