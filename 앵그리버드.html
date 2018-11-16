@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>앵그리버드</title>
+<style>
+body{
+	background-image:url("../res/bg.jpg");	
+}
+</style>
+<script>
+//문서가 로드되면, 오디오 객체 생성하여 문서에 붙이자!!
+function init(){
+	createAudio(); //음악재생 함수 호출!!	
+	createBird();
+}
+
+function createBird(){
+	var img=document.createElement("img");
+	img.src="../res/bird.png";
+	img.style.width=200+"px";
+	document.body.appendChild(img);
+}
+//코드의 관리목적상 기능마다 함수화시켜 처리하자
+function createAudio(){
+	var audio=document.createElement("audio");
+	audio.src="../res/main_theme.mp3";
+	audio.play();//재생!!
+	//오디오를 문서에 붙이자!!
+	document.body.appendChild(audio);
+}
+
+</script>
+</head>
+<body onLoad="init()">
+</body>
+</html>
