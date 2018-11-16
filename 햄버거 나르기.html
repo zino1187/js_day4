@@ -7,11 +7,31 @@
 #burger{
 	width:250px;
 }
+
+/*스타일 코드를 재사용하기 위해서는 클래스 단위로 정의해놓으면
+효율성이 있다..*/
+.stage{
+	width:100%;
+	height:700px;
+}
 </style>
+<script>
+//사용자가 마우스르 움직이는 한, 계속 좌표를 구해놓아야함
+function getPos(){
+	//사용자가 일으키는 모든 이벤트에 대한 정보를 담고있는
+	//객체가 자바스크립트에서 event 객체이다
+	var x=event.clientX; //x좌표값	
+	var y=event.clientY; //y좌표값
+	console.log(x,y);
+}
+</script>
 </head>
-<body>
-	<img src="../res/plate.png"/>
-	<img src="../res/burger.png" id="burger"/>
+<body onMouseMove="getPos()">
+	<div class="stage">
+		<img src="../res/plate.png"/>
+		<br>
+		<img src="../res/burger.png" id="burger"/>
+	</div>
 </body>
 </html>
 
