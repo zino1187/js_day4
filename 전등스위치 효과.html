@@ -24,20 +24,31 @@
 .room{
 	width:750px;	
 	height:100%;
-	background:red;
 	float:left;
+	background-image:url("../res/room.jpg");
 }
 .room img{
 	width:750px;
 	height:100%;
 }
+.light img{
+	width:120px;
+}
+#dark{
+	width:100%;
+	height:100%;
+	background:black;
+	opacity:0.8;
+}
 </style>
 </head>
 <body>
 	<div class="wrapper">
-		<div class="light"></div>
+		<div class="light">
+			<img src="../res/switch_on.png"/>
+		</div>
 		<div class="room">
-			<img src="../res/room.jpg"/>
+			<div id="dark"></div>
 		</div>
 	</div>
 </body>
