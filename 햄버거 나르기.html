@@ -22,11 +22,14 @@ function getPos(){
 	//객체가 자바스크립트에서 event 객체이다
 	var x=event.clientX; //x좌표값	
 	var y=event.clientY; //y좌표값
-	console.log(x,y);
+	//console.log(x,y);
+	//문서내에 info 라 불리는 dom 요소의 텍스트값을 좌표로 대체하자
+	document.getElementById("info").innerText="x:"+x+", y:"+y;
 }
 </script>
 </head>
 <body onMouseMove="getPos()">
+	<h1 id="info">좌표출력</h1>
 	<div class="stage">
 		<img src="../res/plate.png"/>
 		<br>
