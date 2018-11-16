@@ -47,24 +47,28 @@
 var flag=true;
 
 function turnOff(){
-	var op;
+	var op;		//투명도
+	var path; //이미지의 경로
+
 	flag=!flag;
 
 	if(flag==true){
 		op=0;
-	}
-	if(flag==false){
+		path="../res/switch_on.png";
+	}else{
 		op=0.8;
+		path="../res/switch_off.png";
 	}
 	//dark div의 투명도를 불투명하게 하자 (즉 opacity 0.8)
 	document.getElementById("dark").style.opacity=op;
+	document.getElementById("sw").src=path;
 }
 </script>
 </head>
 <body>
 	<div class="wrapper">
 		<div class="light">
-			<img src="../res/switch_on.png" onClick="turnOff()"/>
+			<img src="../res/switch_on.png" id="sw" onClick="turnOff()"/>
 		</div>
 		<div class="room">
 			<div id="dark"></div>
