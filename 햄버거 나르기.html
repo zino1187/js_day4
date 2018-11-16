@@ -25,6 +25,8 @@
 //전역변수로 선언한 이유?? 프로그램내의 모든 함수에서 접근할 수 있도록
 var x=0; 
 var y=0;
+var flag=false; //햄버거가 움직일지 말지를 결정하는 조건을 결정하는 변수
+
 //사용자가 마우스르 움직이는 한, 계속 좌표를 구해놓아야함
 function getPos(){
 	//사용자가 일으키는 모든 이벤트에 대한 정보를 담고있는
@@ -36,12 +38,16 @@ function getPos(){
 	document.getElementById("info").innerText="x:"+x+", y:"+y;
 
 	//햄버거의 좌표 = 마우스의 좌표 
-	var burger=document.getElementById("burger");
-	burger.style.left=x+"px";
-	burger.style.top=y+"px";
+	if(flag){
+		var burger=document.getElementById("burger");
+		burger.style.left=x -(125) +"px";
+		burger.style.top=y -(100)+"px";
+	}
 }
 //햄버거 집기!! 햄버거의 좌표와 마우스의 좌표를 일치!!
 function take(){
+	//alert("나 눌렀어?");
+	flag=true;
 }
 </script>
 </head>
